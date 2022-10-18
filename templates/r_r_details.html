@@ -1,0 +1,11 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container">
+  <h1>{{ review.eatery }}</h1>
+  <h2>{{ review.rating }} Star review</h2>
+  <from action="" method="review">
+    {% csrf_token %} {{ form.as_p }}
+    <a>{{ review.review }}</a>
+  </from>
+  <p>Written by {{ review.author }} on {{ review.date|date:"F j, Y" }}</p>
+</div>
+{% endblock content %}
